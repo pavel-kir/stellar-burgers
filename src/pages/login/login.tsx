@@ -2,7 +2,6 @@ import { FC, SyntheticEvent, useState } from 'react';
 import { LoginUI } from '@ui-pages';
 import { useDispatch } from '@store';
 import { userActions } from '@slices';
-import { useNavigate } from 'react-router-dom';
 import { setCookie } from '../../utils/cookie';
 
 export const Login: FC = () => {
@@ -10,7 +9,6 @@ export const Login: FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<Error | null>(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -20,7 +18,6 @@ export const Login: FC = () => {
       .then((res) => {
         setCookie('accessToken', res.accessToken);
         localStorage.setItem('refreshToken', res.refreshToken);
-        navigate('/', { replace: true });
       })
       .catch((err) => setError(err));
   };

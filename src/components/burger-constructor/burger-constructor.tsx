@@ -27,9 +27,10 @@ export const BurgerConstructor: FC = () => {
   };
   const closeOrderModal = () => {
     if (orderRequest) {
-      dispatch(newBurgerActions.setOrderRequest(false));
+      dispatch(newBurgerActions.setResolveModal(false));
     } else {
-      dispatch(newBurgerActions.clearState());
+      dispatch(newBurgerActions.clearOrderData());
+      dispatch(newBurgerActions.setResolveModal(true));
     }
   };
 

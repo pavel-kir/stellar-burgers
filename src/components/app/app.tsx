@@ -41,10 +41,14 @@ const App = () => {
         .then((res) => {
           if (res.success) {
             dispatch(userActions.getUser());
+          } else {
+            dispatch(userActions.setCheckUser());
           }
         })
-        .catch((err) => console.log(err.message))
-        .finally(() => dispatch(userActions.setCheckUser()));
+        .catch((err) => {
+          console.log(err.message);
+          dispatch(userActions.setCheckUser());
+        });
     } else {
       dispatch(userActions.setCheckUser());
     }

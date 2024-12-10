@@ -6,7 +6,7 @@ import {
 } from '@zlden/react-developer-burger-ui-components';
 import styles from './burger-constructor.module.css';
 import { BurgerConstructorUIProps } from './type';
-import { TIngredient } from '@utils-types';
+import { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorElement, Modal } from '@components';
 import { Preloader, OrderDetailsUI } from '@ui';
 
@@ -38,14 +38,16 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
     )}
     <ul className={styles.elements}>
       {constructorItems.ingredients.length > 0 ? (
-        constructorItems.ingredients.map((item: TIngredient, index: number) => (
-          <BurgerConstructorElement
-            ingredient={item}
-            index={index}
-            totalItems={constructorItems.ingredients.length}
-            key={Math.random()}
-          />
-        ))
+        constructorItems.ingredients.map(
+          (item: TConstructorIngredient, index: number) => (
+            <BurgerConstructorElement
+              ingredient={item}
+              index={index}
+              totalItems={constructorItems.ingredients.length}
+              key={item.key}
+            />
+          )
+        )
       ) : (
         <div
           className={`${styles.noBuns} ml-8 mb-4 mr-5 text text_type_main-default`}
@@ -85,7 +87,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
       />
     </div>
 
-    {orderRequest && (
+    {constructorItems.resolveModal && orderRequest && (
       <Modal onClose={closeOrderModal} title={'Оформляем заказ...'}>
         <Preloader />
       </Modal>

@@ -70,6 +70,7 @@ const userSlice = createSlice({
       })
       .addCase(getUser.rejected, (state) => {
         state.requestStatus = RequestStatus.Failed;
+        state.checkUser = true;
       })
       .addCase(getUser.pending, (state) => {
         state.requestStatus = RequestStatus.Loading;
@@ -77,6 +78,7 @@ const userSlice = createSlice({
       .addCase(getUser.fulfilled, (state, action) => {
         state.requestStatus = RequestStatus.Success;
         state.user = action.payload.user;
+        state.checkUser = true;
       })
       .addCase(updateUser.pending, (state) => {
         state.requestStatus = RequestStatus.Loading;
