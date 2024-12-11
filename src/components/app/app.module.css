@@ -25,4 +25,8 @@
 
 .detailHeader {
   text-align: center;
+  font-family: Iceland;
+  font-size: 28px;
+  line-height: 24px;
+  font-weight: 400;
 }
