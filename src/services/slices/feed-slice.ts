@@ -3,7 +3,7 @@ import { FEED_SLICE_NAME } from './sliceNames';
 import { RequestStatus, TOrder } from '@utils-types';
 import { getFeed } from '../thunk/feed-thunk';
 
-type TFeedState = {
+export type TFeedState = {
   orders: TOrder[];
   total: number;
   totalToday: number;

@@ -3,7 +3,7 @@ import { INGREDIENTS_SLICE_NAME } from './sliceNames';
 import { TIngredient } from '@utils-types';
 import { getIngredients } from '../thunk/ingredients-thunk';
 
-type TIngredientsState = {
+export type TIngredientsState = {
   ingredients: TIngredient[];
   isIngredientsLoading: Boolean;
 };

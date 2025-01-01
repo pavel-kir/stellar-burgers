@@ -3,7 +3,7 @@ import { RequestStatus, TOrder } from '@utils-types';
 import { ORDERS_SLICE_NAME } from './sliceNames';
 import { getOrders } from '../thunk/orders-thunk';
 
-type TOrdersState = {
+export type TOrdersState = {
   orders: TOrder[];
   requestStatus: RequestStatus;
 };
