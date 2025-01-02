@@ -2,7 +2,7 @@
 describe('Добавление ингредиента из списка в конструктор', function () {
   beforeEach(function () {
     cy.intercept('GET', 'api/ingredients', { fixture: 'ingredients.json' });
-    cy.visit('http://localhost:4000');
+    cy.visit('/');
   });
 
   it('Добавление ингредиента', function () {
@@ -16,7 +16,7 @@ describe('Добавление ингредиента из списка в ко�
 describe('Работа модальных окон', function () {
   beforeEach(function () {
     cy.intercept('GET', 'api/ingredients', { fixture: 'ingredients.json' });
-    cy.visit('http://localhost:4000');
+    cy.visit('/');
   });
 
   it('Открытие окна', function () {
@@ -46,7 +46,7 @@ describe('Создание заказа', function () {
     cy.intercept('POST', 'api/auth/token', { fixture: 'token.json' });
     cy.intercept('GET', 'api/auth/user', { fixture: 'user.json' });
     cy.intercept('POST', 'api/orders', { fixture: 'order.json' });
-    cy.visit('http://localhost:4000');
+    cy.visit('/');
   });
 
   afterEach(function () {
