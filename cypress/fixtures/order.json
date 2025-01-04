@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "name": "Краторный фльфа-сфхаридный бургер",
+  "order": {
+    "_id": "67570d7ce367de001daf7da5",
+    "ingredients": [
+      "643d69a5c3f7b9001cfa0941",
+      "643d69a5c3f7b9001cfa0940",
+      "643d69a5c3f7b9001cfa0942",
+      "643d69a5c3f7b9001cfa093c"
+    ],
+    "status": "done",
+    "name": "Краторный spicy био-марсианский метеоритный бургер",
+    "createdAt": "2024-12-09",
+    "updatedAt": "2024-12-09",
+    "number": 555
+  }
+
+}
